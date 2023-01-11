@@ -4,53 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selectors</title>
+    <title>Lentelės Part 2</title>
+    <!-- CSS - Cascading StyleSheets -->
+    <!-- Internal CSS stilius -->
     <style>
-        /* tr {
+        /* th {
             text-align: left;
-            background: aquamarine;
+            background: rgb(215, 215, 215);
         } */
-        thead tr {
+        thead tr th {
             text-align: left;
-            background: aquamarine;
-        }
-        /* specifinis rinkimas */
-        tbody tr:nth-child(2) {
-            background: darkcyan;
+            background: rgb(215, 215, 215);
         }
 
-        /* nuo skaiciaus 2 kartojam N kartu */
+        /* :nth-child() yra speudo klasės selektorius */
+        /* Norint parinkti ketvirtą elementą iš sąrašo  */
+        /* tbody tr:nth-child(4) {
+            background: rgb(215, 143, 143);
+        } */
+
+        /* Norint parinkti kas antrą elementą */
         /* tbody tr:nth-child(2n) {
-            background: lightcoral;
+            background: rgb(215, 143, 143);
         } */
-        
-        /* odd ir even */
-        tbody tr:nth-child(odd) {
-            background: lightcoral;
+        /* odd - nelyginis
+        even - lyginis */
+
+        /* Grotelės nurodo kreipimąsi į elementą turintį tokį id atributą */
+        /* ID selektoriai ima viršų prieš visus kitus selektorius */
+        #treciaEilute {
+            background: green;
         }
 
-        /* hierarhicjos principas (4)
+        tbody tr:nth-child(odd) {
+            background: blueviolet;
+        } 
+
         tbody tr:nth-child(3) {
-            background: darkred;
-        } */
+            background: aquamarine;
+        }
 
-        /* id SELEKTORIAI yra virsesni (3) */
-        /* #treciaeil {
-            background: green;
-        } */
+        /* Important raktažodis nurodo perrašymą visų kitų selektorių taisyklėms */
+        tbody tr {
+            background: black !important;
+        }
 
-        /* tbody tr {
-            background: grey !important;
-        } */
+        tbody tr {
+            background: gray !important;
+        }
 
-        /* IMPORTANT nurodo perrasyma visu kitu sektoriu taisyklem (1) */
-
+        table:nth-child(2) thead th {
+            background: violet;
+        }
     </style>
 </head>
 <body>
     <table style="width: 100%;">
         <thead>
-            <tr style="text-align: left;">
+            <tr>
+                <!-- th - table heading -->
                 <th>#</th>
                 <th>Product</th>
                 <th>Amount</th>
@@ -60,42 +72,93 @@
         </thead>
         <tbody>
             <tr>
-                <td>1 </td>
-                <td>PC </td>
-                <td>2 </td>
-                <td>600 </td>
-                <td>1200 </td>
+                <td>1</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
             </tr>
             <tr>
-                <td>2 </td>
-                <td>PC </td>
-                <td>2 </td>
-                <td>600 </td>
-                <td>1200 </td>
+                <td>2</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
             </tr>
-            <tr id="treciaeil">
-                <td>3 </td>
-                <td>PC </td>
-                <td>2 </td>
-                <td>600 </td>
-                <td>1200 </td>
-            </tr>
-            <tr>
-                <td>4 </td>
-                <td>PC </td>
-                <td>2 </td>
-                <td>600 </td>
-                <td>1200 </td>
+            <!-- inline stilius yra pritaikomas neatsižvelgiant į internal ar external stilių (su viena išlyga) -->
+            <tr id="treciaEilute" style="background: lightblue!Important;">
+                <td>3</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
             </tr>
             <tr>
-                <td>5 </td>
-                <td>PC </td>
-                <td>2 </td>
-                <td>600 </td>
-                <td>1200 </td>
+                <td>4</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
             </tr>
         </tbody>
     </table>
-    
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <!-- th - table heading -->
+                <th>#</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <!-- inline stilius yra pritaikomas neatsižvelgiant į internal ar external stilių (su viena išlyga) -->
+            <tr id="treciaEilute" style="background: lightblue!Important;">
+                <td>3</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>PC</td>
+                <td>3</td>
+                <td>200</td>
+                <td>600</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
