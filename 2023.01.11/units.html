@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matavimo vienetai</title>
+    <style>
+        html {
+            font-size: 20px;
+
+        }
+        body {
+            margin: 0;
+        }
+        .parent {
+            width: 800px;
+        }
+
+        .child {
+            height: 100vw;
+            width: 100vw;
+            background-color: darkred;
+        }
+
+        .rem {
+            width: 10rem;
+            height: 10rem;
+            background-color: darkblue;
+        }
+
+        /* vis tiek žiūrima į html font */
+        .em-parent {
+            font-size: 45px;
+        }
+
+        .em {
+            width: 10em;
+            height: 10em;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <div class="rem"></div>
+    <div class="em-parent">
+        <div class="em"></div>
+    </div>
+    
+</body>
+</html>
