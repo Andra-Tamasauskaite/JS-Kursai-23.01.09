@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+body {
+  max-width: 960px;
+  margin: auto;
+  background-color: #f7f7f7;
+}
+
+.container {
+  margin: 30px 0;
+  box-shadow: 0 3px 15px 1px #dfdfdf;
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  width: 35%;
+  height: 100%;
+  float: left;
+  background-color: #5cce93;
+  padding: 20px;
+  color: white;
+  font-size: 15px;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  padding-left: 3rem;
+  padding-right: 2rem;
+}
+
+.right {
+  width: 65%;
+  height: 100%;
+  float: right;
+  background-color: white;
+  font-size: 15px;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  padding-left: 3rem;
+  padding-right: 0;
+}
+
+.field {
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #c8c5c5;
+  background-color: #fefefe;
+}
+
+div {
+  display: inline-block;
+}
+
+div label {
+  display: block;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid #c8c5c5;
+  /* resize: none; */
+  height: 50px;
+  width: 30rem;
+  display: inline-block;
+  max-width: 960px;
+}
+
+#line {
+  width: 15rem;
+}
+
+#line2 {
+  width: 30rem;
+  /* display: inline-block;
+  max-width: 960px; */
+}
+
+button {
+  display: block;
+}
+
+button {
+  margin-top: 15px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: #5cce93;
+  color: white;
+  border: none;
+  box-shadow: 1px 3px 5px 1px #dfdfdf;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #70e8aa;
+}
+
+.icon :not(#marker) {
+  width: auto;
+  border: 1px solid #ffffff69;
+  border-radius: 50%;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.text {
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+#marker {
+  width: 100%;
+  border: 1px solid #ffffff69;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: block;
+  }
+
+  .left {
+    width: 100%;
+    height: auto;
+  }
+
+  .right {
+    width: 100%;
+    height: auto;
+  }
+}
