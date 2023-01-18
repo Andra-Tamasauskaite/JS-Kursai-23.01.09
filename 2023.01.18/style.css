@@ -51,6 +51,11 @@ body {
   border: none;
   border-bottom: 1px solid #c8c5c5;
   background-color: #fefefe;
+  height: 30px;
+}
+
+:placeholder-shown {
+  font-size: 16px;
 }
 
 div {
@@ -70,7 +75,7 @@ textarea {
   border: none;
   border-bottom: 1px solid #c8c5c5;
   /* resize: none; */
-  height: 50px;
+  height: 100px;
   width: 30rem;
   display: inline-block;
   max-width: 960px;
