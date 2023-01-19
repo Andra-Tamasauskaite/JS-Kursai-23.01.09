@@ -74,7 +74,6 @@ div label {
 textarea {
   border: none;
   border-bottom: 1px solid #c8c5c5;
-  /* resize: none; */
   height: 100px;
   width: 30rem;
   display: inline-block;
@@ -87,8 +86,6 @@ textarea {
 
 #line2 {
   width: 30rem;
-  /* display: inline-block;
-  max-width: 960px; */
 }
 
 button {
@@ -110,29 +107,47 @@ button:hover {
   background-color: #70e8aa;
 }
 
-.icon :not(#marker) {
-  width: auto;
-  border: 1px solid #ffffff69;
-  border-radius: 50%;
-  padding: 15px;
-  margin-bottom: 10px;
-}
-
 h2 {
   font-weight: normal;
   font-size: 15px;
 }
 
-.text {
-  font-size: 15px;
-  padding-left: 15px;
+.left .icon {
+  width: 100%;
+  padding: 10px 0px 2px 70px;
+  position: relative;
 }
 
-#marker {
-  width: 100%;
+.left .icon i {
+  width: 50px;
+  height: 50px;
+  display: block;
   border: 1px solid #ffffff69;
+  text-align: center;
+  line-height: 50px;
   border-radius: 50%;
-  padding: 15px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.left .icon-2 {
+  width: 100%;
+  padding: 20px 0px 2px 70px;
+  position: relative;
+}
+
+.left .icon-2 i {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border: 1px solid #ffffff69;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 940px) {
@@ -143,6 +158,16 @@ h2 {
   .left {
     width: 100%;
     height: auto;
+  }
+
+  .left #marker {
+    padding-bottom: 10px;
+  }
+
+  .left .icon i {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .right {
