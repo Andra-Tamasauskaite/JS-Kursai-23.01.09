@@ -1,8 +1,12 @@
 // Task 1
 let actName = "Jennifer";
-let actLast = " Aninston";
+let actLast = "Aniston";
 
-console.log(actName + actLast);
+if (actName.length > actLast.length) {
+  console.log(actLast);
+} else {
+  console.log(actName);
+}
 
 // Task 2
 const firstName = "Andra";
@@ -19,14 +23,14 @@ console.log(result);
 //Task 3
 let nameA = "Harry";
 let nameB = "Potter";
-
 let combN = nameA.slice(2, 5) + nameB.slice(3, 6);
+
 console.log(combN);
 
 //Task 4
 let sentence = "Once upon a time in hollywood";
-
 let results = sentence.replace(/o/gi, "*");
+
 console.log(results);
 
 //Task 5
@@ -35,3 +39,10 @@ function rand(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+let random1 = rand(0, 2);
+let random2 = rand(0, 2);
+let random3 = rand(0, 2);
+let random4 = rand(0, 2);
+
+console.log(random1, random2, random3, random4);
