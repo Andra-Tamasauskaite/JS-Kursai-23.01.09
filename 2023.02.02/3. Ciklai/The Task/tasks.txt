@@ -1,0 +1,21 @@
+                                
+                                
+                                
+                                2023-02-02
+
+1. Naršyklėje nupieškite linija iš 400 “*”. Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”.
+
+2. Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti raudonos spalvos.
+
+3. Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytusi ekrane.
+
+4. Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”.Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+                * * * * * * * * * * *
+
+5. Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
