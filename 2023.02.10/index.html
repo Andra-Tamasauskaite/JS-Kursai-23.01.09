@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: rgb(23, 126, 189);
+        background: linear-gradient(
+          90deg,
+          rgba(23, 126, 189, 1) 0%,
+          rgba(7, 209, 250, 1) 81%,
+          rgba(153, 230, 255, 1) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.write(
+        `<style> body {color:white;
+    padding: 20px; margin-top: 40px; font-size: 30px}</style>`
+      );
+      function rand(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      //1. task
+      let masyvas = [];
+      for (let i = 0; i < 30; i++) {
+        masyvas.push(rand(5, 25));
+      }
+      document.write(`<div> Task 1 </div>`);
+      document.write(`<div>1. Array's numbers: ${masyvas}. </div>`);
+
+      //a) task
+      document.write(`<div> <br><br>Task 2 </div>`);
+      let counter = 0;
+      for (let reiksme of masyvas) {
+        if (reiksme > 10) counter++;
+      }
+      document.write(`<div>a) Numbers bigger than 10: ${masyvas}. </div>`);
+
+      // b) task
+      let max = 0;
+      for (let reiksme of masyvas) {
+        if (reiksme > max) max = reiksme;
+      }
+
+      let indexes = [];
+      for (let index in masyvas) {
+        if (masyvas[index] === max) indexes.push(index);
+      }
+      document.write(
+        `<div>b) Biggest number is: ${max}, its' index is: ${indexes}. </div>`
+      );
+
+      // c) task
+      let sum = 0;
+      for (let i in masyvas) {
+        if (i % 2 === 0) sum += masyvas[i];
+      }
+      document.write(`<div>c) Even values sum is: ${sum}. </div>`);
+
+      // d) task
+      let newMasyvas = [];
+      for (let i in masyvas) {
+        newMasyvas.push(masyvas[i] - i);
+      }
+      document.write(`<div>d) New array: ${newMasyvas}. </div>`);
+
+      //e) task
+      for (let i = 0; i < 10; i++) {
+        newMasyvas[newMasyvas.length] = rand(5, 25);
+      }
+      document.write(
+        `<div>e) New array with extra 10 indexes: ${newMasyvas}. </div>`
+      );
+
+      //f) task
+      let newArrOdd = [];
+      let newArrEven = [];
+      for (let i in masyvas) {
+        if (i % 2 === 0) {
+          newArrEven.push(masyvas[i]);
+        } else {
+          newArrOdd.push(masyvas[i]);
+        }
+      }
+      document.write(
+        `<div>f) 1) New array with odd numbers from the array: ${newArrOdd}. </div>`
+      );
+      document.write(
+        `<div>f) 2) New array with even numbers from the array: ${newArrEven}. </div>`
+      );
+
+      //g) task
+      for (let i in masyvas) {
+        if (i % 2 === 0 && masyvas[i] > 15) masyvas[i] = 0;
+      }
+      document.write(
+        `<div>g) Even indexes numbers and more than 15, making their values: ${masyvas}. </div>`
+      );
+
+      //h) task
+      let firstIndexValue;
+      for (let i in masyvas) {
+        if (masyvas[i] > 10) {
+          firstIndexValue = i;
+          break;
+        }
+      }
+      document.write(
+        `<div>h) First index's value bigger than 10: ${firstIndexValue}. </div>`
+      );
+
+      //i) task
+      for (let i = 0; i < masyvas.length; i++) {
+        masyvas.splice(i, 1);
+      }
+      document.write(`<div>i) Deleted even indexes: ${masyvas}. </div>`);
+
+      //3
+      let letters = [];
+      for (let i = 0; i < 50; i++) {
+        letters.push("A", "B", "C", "D");
+      }
+      let randomLetters = letters.sort(function () {
+        return Math.random() - 0.5;
+      });
+
+      document.write(
+        `<div><br> <br> Task 3 <br> Letters: ${randomLetters}. <br>Its' length: ${randomLetters.length}. </div>`
+      );
+    </script>
+  </body>
+</html>

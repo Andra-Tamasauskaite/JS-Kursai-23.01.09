@@ -1,0 +1,40 @@
+body {
+  background: rgb(23, 126, 189);
+  background: linear-gradient(
+    90deg,
+    rgba(23, 126, 189, 1) 0%,
+    rgba(7, 209, 250, 1) 81%,
+    rgba(153, 230, 255, 1) 100%
+  );
+}
+
+h1,
+h4,
+h2 {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 10rem;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+p {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+#task-3 {
+  font-size: 25px;
+}
+
+#task-4 {
+  font-size: 25px;
+}
