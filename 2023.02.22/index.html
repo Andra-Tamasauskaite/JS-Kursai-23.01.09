@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="watch">
+      <div class="time">00:00</div>
+      <div class="controls">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      const time = document.querySelector(".watch .time");
+      const start_btn = document.getElementById("start");
+      const pause_btn = document.getElementById("pause");
+      const reset_btn = document.getElementById("reset");
+
+      let seconds = 0;
+      let interval = null;
+
+      start_btn.addEventListener("click", start);
+      pause_btn.addEventListener("click", pause);
+      reset_btn.addEventListener("click", reset);
+
+      function timer() {
+        seconds++;
+        let mins = Math.floor(seconds / 60);
+        let secs = seconds % 60;
+
+        if (secs < 10) secs = "0" + secs;
+        if (mins < 10) mins = "0" + mins;
+        time.innerHTML = `${mins}:${secs}`;
+      }
+
+      function start() {
+        if (interval) {
+          return;
+        }
+        interval = setInterval(timer, 1000);
+      }
+
+      function pause() {
+        clearInterval(interval);
+        interval = null;
+      }
+
+      function reset() {
+        pause();
+        seconds = 0;
+        time.innerHTML = "00:00";
+      }
+    </script>
+  </body>
+</html>
