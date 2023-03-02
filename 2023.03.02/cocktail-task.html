@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      body {
+        background-color: #87072e;
+        color: white;
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+      }
+      .box {
+        width: calc((100% - 50px) / 3);
+      }
+      .box h4 {
+        color: white;
+        margin-top: 10px;
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container result"></div>
+    <!-- JAVASCRIPT -->
+    <script>
+      function cocktailList() {
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
+          .then((resp) => resp.json())
+          .then((resp) => {
+            const result = resp.drinks.map((drink) => {
+              console.log(drink);
+              return `
+            <div class="box" onclick="showCocktail(${drink.idDrink})">
+                <img src="${drink.strDrinkThumb}"/>
+                <h4>${drink.strDrink}</h4>
+            </div>
+                `;
+            });
+            document.querySelector(
+              ".result"
+            ).innerHTML = `<div class="grid">${result.join("")}</div>`;
+          });
+      }
+
+      function showCocktail(id) {
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id)
+          .then((resp) => resp.json())
+          .then((resp) => {
+            const drink = resp.drinks[0];
+
+            let ingredients = "";
+
+            for (let i = 1; i <= 15; i++) {
+              if (drink["strIngredient" + i])
+                ingredients += `<li>
+                    ${drink["strIngredient" + i]}
+                    ${drink["strMeasure" + i]}
+                    </li>`;
+            }
+            document.querySelector(".result").innerHTML = `
+            
+            <div class="single">
+                <a href="#" onclick="cocktailList()">Go Back</a>
+                <img src="${drink.strDrinkThumb}" />
+                <h2>${drink.strDrink}</h2>
+
+                <div class="instructions">
+                    <h4>Instructions:</h4>
+                    <p>${drink.strInstructions}</p>
+                </div>
+                <div class="glass">
+                    <h4>Glass type:</h4>
+                    <p>${drink.strGlass}</p>
+                </div>
+                ${ingredients}
+            </div>
+            
+            `;
+          });
+      }
+      cocktailList();
+    </script>
+  </body>
+</html>
